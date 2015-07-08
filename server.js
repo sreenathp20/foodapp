@@ -6,9 +6,9 @@ var cookieParser=require('cookie-parser');
 var bodyParser=require('body-parser');
 
 var states;
-fs.readFile("states.json", function(err, data) {
-    states = JSON.parse(data.toString());
-});
+// fs.readFile("states.json", function(err, data) {
+//     states = JSON.parse(data.toString());
+// });
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -34,7 +34,7 @@ app.get('/logout', function(request, response) {
     response.json({result: true});
 });
 app.get('/', function(request, response) {
-    response.redirect('/home.html');
+    response.redirect('/mobile/index.html');
 });
 
 
